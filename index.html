@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const icons = document.querySelectorAll('.nav-ul li');
+    const initialDelay = 1000; // Počiatočné oneskorenie v milisekundách
+    icons.forEach((icon, index) => {
+        setTimeout(() => {
+            icon.style.animation = `slideAndBounce 1s forwards`;
+        }, initialDelay + 100 * index); // Zvýšenie oneskorenia pre každú ikonu
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navBg = document.getElementById('nav-bg');
+
+    hamburger.addEventListener('click', function(event) {
+        event.stopPropagation();  // Zabránenie bublaniu udalosti
+        // Toggle navigation
+        navBg.style.left = navBg.style.left === "0px" ? "-150%" : "0px";
+    });
+
+    // Zatvorenie menu kliknutím mimo lištu
+    document.addEventListener('click', function(event) {
+        if (!navBg.contains(event.target) && !hamburger.contains(event.target)) {
+            navBg.style.left = "-100%";
+        }
+    });
+});
+</script>
+<body>
+    <nav id="nav-bg">
+        <div class="hamburger">&#9776;</div>  <!-- Hamburger Icon -->
+        <ul class="nav-ul">
+            <li><a href="#Domov"><img src="./images/1.svg" alt=""><span class="tooltip">Domov</span></a></li>
+            <li><a href="#Profil"><img src="./images/4.svg" alt=""><span class="tooltip">Profil</span></a></li>
+            <li><a href="#Služby"><img src="./images/2.svg" alt=""><span class="tooltip">Služby</span></a></li>
+            <li><a href="#Projekty"><img src="./images/5.svg" alt=""><span class="tooltip">Projekty</span></a></li>
+            <li><a href="#Kontakt"><img src="./images/3.svg" alt=""><span class="tooltip">Kontakt</span></a></li>
+        </ul>
+    </nav>
+    
+
+    <section id="#Domov">
+        <img class="logo" src="./images/Untitled design (4).svg" alt="">
+    </section>
+    
+
+    
+</body>
+</html>

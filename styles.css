@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  border-color: black;
+}
+
+body {
+  background-image: url(./images/bgcolor.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  
+}
+
+/* Základné štýlovanie pre #nav-bg */
+#nav-bg {
+  width: 5%;  /* Upresnenie šírky navigačnej lišty */
+  height: 100vh;  /* Výška nastavená na celú obrazovku */
+  margin-left: 2%;
+  position: fixed;  /* Pevné umiestnenie */
+  top: 0; left: 0;  /* Začiatok zhora */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;  /* Farba pozadia */
+  box-shadow: 0px -1px 24px #0e023d, 0px -1px 24px #0e023d;
+  animation: slideDown 1s ease ; /* Animácia sa spustí s oneskorením 0.5s */
+}
+
+
+
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mediálne pravidlo pre zrušenie animácie na malých obrazovkách */
+@media (max-width: 600px) {
+  #nav-bg {
+    animation: none;  /* Vypnutie animácie */
+  }
+}
+
+
+.nav-ul {
+
+  width: 5rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-ul li {
+
+  list-style: none;
+  margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+@keyframes slideAndBounce {
+  0% {
+      opacity: 0;
+      transform: translateX(-70px);
+  }
+  50% {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+  65% {
+      transform: translateX(-5px);
+  
+  }
+  100% {
+      transform: translateX(0px);
+      opacity: 1;
+  }
+}
+
+.nav-ul li:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Zmena farby pozadia položky menu */
+.nav-ul li:hover {
+  transition: background-color 0.3s ease;
+}
+
+/* Rotácia ikony */
+.nav-ul li:hover img {
+  transform: rotate(15deg);
+  transition: transform 0.3s ease;
+}
+
+.nav-ul li:hover img {
+  transform: scale(1.2) rotate(15deg);
+  transition: transform 0.5s ease;
+}
+
+.nav-ul img {
+  height: 4rem;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 110%;  /* Posunúť doprava od ikony */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nav-ul li:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.logo {
+  height: 29rem;
+    display: flex;
+    position: absolute;
+    top: 26%;
+    left: 62.3%;
+    opacity: 0.9;
+}
+
+.hamburger {
+  display: none;  /* Skryť hamburger na veľkých obrazovkách */
+  font-size: 30px;  /* Veľkosť hamburger ikony */
+  cursor: pointer;
+  color: #000;  /* Zabezpečte, že farba ikony je kontrastná voči pozadiu */
+  position: fixed;  /* Absolútna pozícia pre umiestnenie */
+  top: 20px;  /* Horná pozícia */
+  right: 20px;  /* Pravá pozícia */
+  z-index: 1000;  /* Z-index pre zabezpečenie, že ikona bude nad ostatnými prvkami */
+}
+
+/* Malé zariadenia (telefóny, do 600px) */
+@media (max-width: 600px) {
+  .hamburger {
+    z-index: 1100;
+    display: block;  /* Zobraziť hamburger na malých obrazovkách */
+}
+
+#nav-bg {
+    z-index: 1000;
+    position: fixed;  /* Umožňuje lište zostať na vrchu */
+    top: 0;
+    left: -200%;  /* Skryť lištu mimo obrazovky */
+    width: 100%;  /* Šírka vysúvanej lišty */
+    height: 40%;  /* Výška nastavená na celú obrazovku */
+    transition: left 0.3s;  /* Plynulé vysunutie a zasunutie */
+    background-color: white;  /* Zabezpečte, že pozadie je vhodne farebné */
+}
+
+
+  .nav-ul {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      justify-content: space-around;
+  }
+
+  .nav-ul li {
+      margin: 0.5rem;  /* Menšie okraje */
+      transform: translateX(0);
+      opacity: 1; /* Ikony sú vždy viditeľné */
+  }
+
+  .nav-ul img {
+      height: 3rem;  /* Menšie ikony */
+  }
+
+  .logo {
+    height: 20rem;
+        position: absolute;
+        top: 4%;
+        left: 24%;
+  }
+
+  .tooltip {
+      left: 200%;
+      top: 15%;  /* Posun tooltipu pod ikonu */
+      transform: translateX(-50%);
+      width: auto;  /* Automatická šírka podľa obsahu */
+      padding: 0.5rem; /* Menšie paddingy */
+  }
+}
+
+
+
+/* Tablety a malé desktopy (601px až 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  #nav-bg {
+      width: 20%;  /* Širšia navigácia */
+  }
+
+  .nav-ul li {
+      margin-top: 1rem;  /* Menšie okraje */
+  }
+
+  .nav-ul img {
+      
+      height: 3.5rem;  /* Trochu väčšie ikony ako na telefóne */
+  }
+
+
+}
+
+
