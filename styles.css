@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
 }
+
 html {
   border-color: black;
 }
@@ -14,23 +15,30 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 
-  
+
 }
 
 /* Základné štýlovanie pre #nav-bg */
 #nav-bg {
-  width: 5%;  /* Upresnenie šírky navigačnej lišty */
-  height: 100vh;  /* Výška nastavená na celú obrazovku */
+  width: 5%;
+  /* Upresnenie šírky navigačnej lišty */
+  height: 100vh;
+  /* Výška nastavená na celú obrazovku */
   margin-left: 2%;
-  position: fixed;  /* Pevné umiestnenie */
-  top: 0; left: 0;  /* Začiatok zhora */
+  position: fixed;
+  /* Pevné umiestnenie */
+  top: 0;
+  left: 0;
+  /* Začiatok zhora */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: white;  /* Farba pozadia */
+  background-color: white;
+  /* Farba pozadia */
   box-shadow: 0px -1px 24px #0e023d, 0px -1px 24px #0e023d;
-  animation: slideDown 1s ease ; /* Animácia sa spustí s oneskorením 0.5s */
+  animation: slideDown 1s ease;
+  /* Animácia sa spustí s oneskorením 0.5s */
 }
 
 
@@ -41,6 +49,7 @@ body {
     opacity: 0;
     transform: translateY(-100%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -50,7 +59,8 @@ body {
 /* Mediálne pravidlo pre zrušenie animácie na malých obrazovkách */
 @media (max-width: 600px) {
   #nav-bg {
-    animation: none;  /* Vypnutie animácie */
+    animation: none;
+    /* Vypnutie animácie */
   }
 }
 
@@ -76,20 +86,23 @@ body {
 
 @keyframes slideAndBounce {
   0% {
-      opacity: 0;
-      transform: translateX(-70px);
+    opacity: 0;
+    transform: translateX(-70px);
   }
+
   50% {
-      opacity: 1;
-      transform: translateX(0px);
+    opacity: 1;
+    transform: translateX(0px);
   }
+
   65% {
-      transform: translateX(-5px);
-  
+    transform: translateX(-5px);
+
   }
+
   100% {
-      transform: translateX(0px);
-      opacity: 1;
+    transform: translateX(0px);
+    opacity: 1;
   }
 }
 
@@ -128,7 +141,8 @@ body {
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  left: 110%;  /* Posunúť doprava od ikony */
+  left: 110%;
+  /* Posunúť doprava od ikony */
   top: 50%;
   transform: translateY(-50%);
   opacity: 0;
@@ -142,124 +156,145 @@ body {
 
 .logo {
   height: 29rem;
-    display: flex;
-    position: absolute;
-    top: 26%;
-    left: 62.3%;
-    opacity: 0.9;
+  display: flex;
+  position: absolute;
+  top: 26%;
+  left: 62.3%;
+  opacity: 0.9;
 }
 
 .hamburger {
-  display: none;  /* Skryť hamburger na veľkých obrazovkách */
-  font-size: 30px;  /* Veľkosť hamburger ikony */
+  display: none;
+  /* Skryť hamburger na veľkých obrazovkách */
+  font-size: 30px;
+  /* Veľkosť hamburger ikony */
   cursor: pointer;
-  color: #000;  /* Zabezpečte, že farba ikony je kontrastná voči pozadiu */
-  position: fixed;  /* Absolútna pozícia pre umiestnenie */
-  top: 20px;  /* Horná pozícia */
-  right: 20px;  /* Pravá pozícia */
-  z-index: 1000;  /* Z-index pre zabezpečenie, že ikona bude nad ostatnými prvkami */
+  color: #000;
+  /* Zabezpečte, že farba ikony je kontrastná voči pozadiu */
+  position: fixed;
+  /* Absolútna pozícia pre umiestnenie */
+  top: 20px;
+  /* Horná pozícia */
+  right: 20px;
+  /* Pravá pozícia */
+  z-index: 1000;
+  /* Z-index pre zabezpečenie, že ikona bude nad ostatnými prvkami */
 }
 
 /* Malé zariadenia (telefóny, do 600px) */
 @media (max-width: 600px) {
   .hamburger {
     z-index: 1100;
-    display: block;  /* Zobraziť hamburger na malých obrazovkách */
-}
+    display: block;
+    /* Zobraziť hamburger na malých obrazovkách */
+  }
 
-body {
-  background-image: url(./images/Miesto\ kde\ sa\ kód\ mení\ na\ sny\ \(1\).jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  
-}
+  body {
+    background-image: url(./images/Miesto\ kde\ sa\ kód\ mení\ na\ sny\ \(1\).jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 
-#nav-bg {
+  }
+
+
+  #nav-bg {
     z-index: 1000;
-    position: fixed;  /* Umožňuje lište zostať na vrchu */
+    position: fixed;
+    /* Umožňuje lište zostať na vrchu */
     top: 0;
-    left: -200%;  /* Skryť lištu mimo obrazovky */
-    width: 100%;  /* Šírka vysúvanej lišty */
-    height: 28.5%;  /* Výška nastavená na celú obrazovku */
-    transition: left 0.3s;  /* Plynulé vysunutie a zasunutie */
-    background-color: rgba(59, 23, 105, 0.712);  /* Zabezpečte, že pozadie je vhodne farebné */
+    left: -200%;
+    /* Skryť lištu mimo obrazovky */
+    width: 100%;
+    /* Šírka vysúvanej lišty */
+    height: 150px;
+    /* Výška nastavená na celú obrazovku */
+    transition: left 0.3s;
+    /* Plynulé vysunutie a zasunutie */
+    background-color: rgba(59, 23, 105, 0.712);
+    /* Zabezpečte, že pozadie je vhodne farebné */
     margin: 0;
     box-shadow: none;
-}
+  }
 
 
   .nav-ul {
-      flex-direction: row;
-      width: 100%;
-      height: auto;
-      justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
   }
 
   .nav-ul li {
-      margin: 0.5rem;  /* Menšie okraje */
-      transform: translateX(0);
-      opacity: 1; /* Ikony sú vždy viditeľné */
+    margin: 0.5rem;
+    /* Menšie okraje */
+    transform: translateX(0);
+    opacity: 1;
+    /* Ikony sú vždy viditeľné */
   }
 
   .nav-ul img {
-      height: 3rem;  /* Menšie ikony */
+    height: 3rem;
+    /* Menšie ikony */
   }
-  
-/* Media query for devices with a width of 600px or less */
-@media (max-width: 600px) {
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-image: linear-gradient(131deg, #000000ec 20%, rgba(255, 255, 255, 0.507) 114%);
-    box-shadow: 0px 23px 28px black;
-    padding: 10px 0;
-}
 
-  .logo {
-      position: static;  /* Reset positioning to work within flexbox */
-      transform: none;  /* Remove transformations */
-      top: auto;  /* Reset top positioning */
-      left: auto;  /* Reset left positioning */
-      width: 15rem;  /* Keep the original size of the logo */
-      height: auto;  /* Maintain aspect ratio */
+  /* Media query for devices with a width of 600px or less */
+  @media (max-width: 600px) {
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 150px;
+      background-image: linear-gradient(131deg, #000000ec 20%, rgba(255, 255, 255, 0.507) 114%);
+      box-shadow: 0px 23px 28px black;
+      padding: 10px 0;
+    }
+
+    .logo {
+      position: static;
+      transform: none;
+      top: auto;
+      left: auto;
+      width: 8rem;
   }
-}
+  }
 
 
 
   .tooltip {
-      left: 200%;
-      top: 15%;  /* Posun tooltipu pod ikonu */
-      transform: translateX(-50%);
-      width: auto;  /* Automatická šírka podľa obsahu */
-      padding: 0.5rem; /* Menšie paddingy */
+    left: 200%;
+    top: 15%;
+    /* Posun tooltipu pod ikonu */
+    transform: translateX(-50%);
+    width: auto;
+    /* Automatická šírka podľa obsahu */
+    padding: 0.5rem;
+    /* Menšie paddingy */
   }
 
 
 
 
-/* Tablety a malé desktopy (601px až 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  #nav-bg {
-      width: 20%;  /* Širšia navigácia */
+  /* Tablety a malé desktopy (601px až 1024px) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    #nav-bg {
+      width: 20%;
+      /* Širšia navigácia */
+    }
+
+    .nav-ul li {
+      margin-top: 1rem;
+      /* Menšie okraje */
+    }
+
+    .nav-ul img {
+
+      height: 3.5rem;
+      /* Trochu väčšie ikony ako na telefóne */
+    }
+
+
   }
-
-  .nav-ul li {
-      margin-top: 1rem;  /* Menšie okraje */
-  }
-
-  .nav-ul img {
-      
-      height: 3.5rem;  /* Trochu väčšie ikony ako na telefóne */
-  }
-
-
-}
-
-
