@@ -20,20 +20,32 @@
 document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.querySelector('.hamburger');
     const navBg = document.getElementById('nav-bg');
-
+    
     hamburger.addEventListener('click', function(event) {
-        event.stopPropagation();  // Zabránenie bublaniu udalosti
+        event.stopPropagation();  // Prevent event bubbling
         // Toggle navigation
         navBg.style.left = navBg.style.left === "0px" ? "-150%" : "0px";
     });
 
-    // Zatvorenie menu kliknutím mimo lištu
-    document.addEventListener('click', function(event) {
-        if (!navBg.contains(event.target) && !hamburger.contains(event.target)) {
-            navBg.style.left = "-100%";
-        }
-    });
+    if (window.innerWidth <= 1024) {
+        // Close menu by clicking outside the bar only on smaller screens
+        document.addEventListener('click', function(event) {
+            if (!navBg.contains(event.target) && !hamburger.contains(event.target)) {
+                navBg.style.left = "-100%";
+            }
+        });
+    }
 });
+
+window.addEventListener('resize', function() {
+    // Add or remove the outside click listener based on screen width
+    if (window.innerWidth <= 600) {
+        document.addEventListener('click', handleOutsideClicks);
+    } else {
+        document.removeEventListener('click', handleOutsideClicks);
+    }
+});
+
 </script>
 <body>
     <nav id="nav-bg">
@@ -49,8 +61,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
     <section id="#Domov">
+    <div class="logo-container">
         <img class="logo" src="./images/Untitled design (4).svg" alt="">
-    </section>
+    </div>
+</section>
     
 
     
